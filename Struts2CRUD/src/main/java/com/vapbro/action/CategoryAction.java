@@ -77,6 +77,8 @@ public class CategoryAction extends ActionSupport implements Preparable {
 
 	public Category getCategory() {
 		return cat;
+		
+		
 	}
 
 	public void setCategory(Category cat) {
