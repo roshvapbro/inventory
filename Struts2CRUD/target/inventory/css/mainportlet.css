@@ -1,0 +1,54 @@
+
+.Struts2CrudPortlet .titleDiv {
+    background-color: #EFFBEF;
+    font-weight:bold;
+    font-size:18px;
+    text-align:left;
+    padding-left:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border:2px solid #8F99EF;
+}
+.Struts2CrudPortlet h1 { font-weight:bold; color: brown; font-size:15px; text-align:left;}
+
+.Struts2CrudPortlet td { font-size:12px; padding-right:10px; }
+.Struts2CrudPortlet th { text-align:left; font-weight:bold; font-size:13px; padding-right:10px; }
+..Struts2CrudPortlet tdLabel { font-weight: bold; white-space:nowrap; vertical-align:top;}
+
+.Struts2CrudPortlet A { color:#4A825A; text-decoration:none;}
+.Struts2CrudPortlet A:link { text-decoration:none;}
+.Struts2CrudPortlet A:visited { text-decoration:none;}
+.Struts2CrudPortlet A:hover { text-decoration:none; color: red;}
+
+.Struts2CrudPortlet .borderAll {
+    border: 2px solid #8F99EF;
+}
+
+.Struts2CrudPortlet .butStnd {
+    font-family:arial,sans-serif;
+    font-size:11px;
+    width:105px;
+    background-color:#DCDFFA ;color:#4A825A;font-weight:bold;
+}
+
+.Struts2CrudPortlet .error {
+    color: red;
+    font-weight: bold;
+}
+.Struts2CrudPortlet .errorSection {
+    padding-left:18px;
+    padding-top:2px;
+    padding-bottom:10px;
+    padding-right:5px;
+}
+
+.Struts2CrudPortlet .even { background-color: #EFFBEF; }
+.Struts2CrudPortlet .odd { background-color: white; }
+
+.Struts2CrudPortlet .nowrap { white-space:nowrap; }
+
+.struts2CrudPortlet .errorLabel {font-style:italic; color:red; }
+.struts2CrudPortlet .errorMessage {font-weight:bold; color:red; }
+
+.struts2CrudPortlet .checkboxErrorLabel {color:red; }
+.struts2CrudPortlet .required {color:red;}

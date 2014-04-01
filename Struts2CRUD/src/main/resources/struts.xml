@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+   <constant name="struts.devMode" value="true" />
+   <constant name="struts.custom.i18n.resources" value="guest" />
+
+	<!-- Configuration for the default package. -->
+	<package name="default" extends="struts-default" namespace="/" >
+	
+		  	<!-- setup the default-stack exception mapping interceptor 
+ 		so that any exceptions not caught by this application 
+ 		will be logged and then handled by the global exception 
+ 		mapping -->
+ 		<interceptors>
+ 		<interceptor-stack name="appDefault">
+        	 <interceptor-ref name="defaultStack">
+      			<param name="exception.logEnabled">true</param>
+      			<param name="exception.logLevel">ERROR</param>
+   			</interceptor-ref>
+ 	    </interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="appDefault" />
+
+		
+        <global-results>
+  		  <result name="error">/error.jsp</result>
+  	    </global-results>
+  	    
+  	    		
+	   <global-exception-mappings>
+	        <exception-mapping exception="java.lang.Exception" result="error" />
+	   	</global-exception-mappings>
+		
+		
+		<action name="index" class="com.vapbro.action.ListProductAction">
+			<result name="success">/jsp/products.jsp</result>
+		</action>
+		<action name="catindex" class="com.vapbro.action.ListCategoryAction">
+			<result name="success">/jsp/categories.jsp</result>
+		</action>
+		
+		<action name="addProductInput" class="com.vapbro.action.ProductAction" method="input">
+			<result name="input">/jsp/productForm.jsp</result>
+		</action>
+		<action name="addCategoryInput" class="com.vapbro.action.CategoryAction" method="input">
+			<result name="input">/jsp/categoryForm.jsp</result>
+		</action>		
+		<action name="addProductSave" class="com.vapbro.action.ProductAction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+			</result>
+			<result name="input">/jsp/productForm.jsp</result>
+		</action>
+		<action name="addCategorySave" class="com.vapbro.action.CategoryAction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">catindex</param>
+			</result>
+			<result name="input">/jsp/productForm.jsp</result>
+		</action>
+		
+		<action name="editProductInput" class="com.vapbro.action.ProductAction" method="input">
+			<result name="input">/jsp/productForm.jsp</result>
+		</action>
+		
+		<action name="deleteProduct" class="com.vapbro.action.ProductDeleteAction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+			</result>
+			<result name="input">/jsp/productForm.jsp</result>
+		</action>
+
+	</package>
+	
+</struts>
