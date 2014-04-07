@@ -1,0 +1,94 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
+		
+		<title>DataTables example</title>
+		<style type="text/css" title="currentStyle">
+			@import "css/jquery-ui.css";
+			@import "css/dataTables.jqueryui.css";
+		</style>
+		<script type="text/javascript" language="javascript" src="scripts/jquery.js"></script>
+		<script type="text/javascript" language="javascript" src="scripts/jquery.dataTables.js"></script>
+		<script type="text/javascript" language="javascript" src="scripts/dataTables.jqueryui.js"></script>
+		<script type="text/javascript" charset="utf-8">
+		var t;
+			$(document).ready(function() {
+				t= $('#example').dataTable(
+						  {
+						        "ajax": "ajax/getJSONResult"
+						  } 		
+				        );
+				
+				 var counter = 1;
+				 
+				    $('#addRow').on( 'click', function () {
+				        t.row.add( [
+				            counter +'.1',
+				            counter +'.2',
+				            counter +'.3',
+				            counter +'.4',
+				            counter +'.5',
+				            counter +'.6',
+				            counter +'.7',
+				            counter +'.8',
+				            counter +'.9',
+				            counter +'.10'
+				        ] ).draw();
+				 
+				        counter++;
+				    } );
+				
+				
+				
+			} );
+		</script>
+	</head>
+	<body id="dt_example">
+	<button id="addRow">Add new row</button>
+	<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+    <div id="footer" class="clear" style="text-align:center;">
+				<p>
+					Please refer to the <a href="http://www.datatables.net/usage">DataTables documentation</a> for full information about its API properties and methods.<br>
+					Additionally, there are a wide range of <a href="http://www.datatables.net/extras">extras</a> and <a href="http://www.datatables.net/plug-ins">plug-ins</a> which extend the capabilities of DataTables.
+				</p>
+				
+				<span style="font-size:10px;">
+					DataTables designed and created by <a href="http://www.sprymedia.co.uk">Allan Jardine</a> &copy; 2007-2011<br>
+					DataTables is dual licensed under the <a href="http://www.datatables.net/license_gpl2">GPL v2 license</a> or a <a href="http://www.datatables.net/license_bsd">BSD (3-point) license</a>.
+				</span>
+			</div>
+	</body>
+</html>

@@ -16,5 +16,13 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/mmuppida/.m2/repository/org/apache/struts/xwork/xwork-core/2.2.1.1/xwork-core-2.2.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mmuppida/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="C:/work/rosh/extjs-crud-grid-master/extjs-crud-grid-master/WebContent/WEB-INF/lib/json-lib-2.2.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/struts/struts2-core/2.1.8/struts2-core-2.1.8.jar" sourcepath="M2_REPO/org/apache/struts/struts2-core/2.1.8/struts2-core-2.1.8-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/D:/maven/repo/org/apache/struts/struts2-core/2.1.8/struts2-core-2.1.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Setups/apache-tomcat-7.0.52-windows-x64/apache-tomcat-7.0.52/lib/servlet-api.jar" sourcepath="C:/Users/mmuppida/.m2/repository/org/apache/tomcat/tomcat-servlet-api/7.0.52/tomcat-servlet-api-7.0.52-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
