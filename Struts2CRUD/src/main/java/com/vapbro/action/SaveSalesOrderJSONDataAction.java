@@ -10,12 +10,13 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.opensymphony.xwork2.Action;
 
-public class SaveSalesOrderJSONDataAction implements ServletRequestAware,ServletResponseAware {
+public class SaveSalesOrderJSONDataAction {
 
 	// private String string1 = "A";
 	// private String[] stringarray1 = {"A1","B1"};
@@ -37,6 +38,9 @@ public class SaveSalesOrderJSONDataAction implements ServletRequestAware,Servlet
 
 	public String execute() {
 		try {
+			
+			
+			HttpServletRequest request = ServletActionContext.getRequest();
 			System.out.println("in jsondataAction data1:"
 					+ request.getParameterMap());
 			System.out.println("in jsondataAction data2:"
@@ -79,27 +83,13 @@ public class SaveSalesOrderJSONDataAction implements ServletRequestAware,Servlet
 	
 	
 	public String saveSalesOrder(){
+		HttpServletRequest request = ServletActionContext.getRequest();
+		
 		System.out.println("in savesalesOrderAction data3:"
 				+ request.getParameter("data"));
 		data=request.getParameter("data");
 		
-		response.setContentType("application/json"); 
-		PrintWriter out;
-		try {
-			out = response.getWriter();
-			out.println("{\"total\":1,\"data\":"+data + ",\"success\":true}");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		//{"total":2,"data"
-		
-		
-	
-		
-		
-		
-		
+			
 		return Action.SUCCESS;
 		
 	}
@@ -162,19 +152,19 @@ public class SaveSalesOrderJSONDataAction implements ServletRequestAware,Servlet
 		this.total = total;
 	}
 
-	public void setServletRequest(HttpServletRequest request) {
-		this.request = request;
-	}
+//	public void setServletRequest(HttpServletRequest request) {
+//		this.request = request;
+//	}
+//
+//	public HttpServletRequest getServletRequest() {
+//		return this.request;
+//	}
 
-	public HttpServletRequest getServletRequest() {
-		return this.request;
-	}
-
-	@Override
-	public void setServletResponse(HttpServletResponse response) {
-		this.response=response;
-		
-	}
+//	@Override
+//	public void setServletResponse(HttpServletResponse response) {
+//		this.response=response;
+//		
+//	}
 
 	// public Map<String, String> getMaps() {
 	// return maps;

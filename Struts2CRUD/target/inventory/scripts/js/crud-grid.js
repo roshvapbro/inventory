@@ -22,9 +22,9 @@ Ext.onReady(function(){
     var proxy = new Ext.data.HttpProxy({
         api: {
             read : 'ajax/getSalesOrderJSON.action',
-            create : 'saveSalesOrderJSON.action',
-            update: 'saveSalesOrderJSON.action',
-            destroy: 'saveSalesOrderJSON.action'
+            create : 'ajax/ajaxsaveSalesOrderJSON.action',
+            update: 'ajax/ajaxsaveSalesOrderJSON.action',
+            destroy: 'ajax/ajaxsaveSalesOrderJSON.action'
         }
     });
     
@@ -144,6 +144,7 @@ Ext.onReady(function(){
             iconCls: 'icon-user-save',
             text: 'Save All Modifications',
             handler: function(){
+                grid.getView().refresh();
                 store.save();
             }
         }]
