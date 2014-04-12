@@ -22,19 +22,19 @@ public class SalesOrderJSONDataAction{
 	
 	public SalesOrderJSONDataAction(){
 		Map<String,String> temp = new HashMap<String,String>();
-		temp.put("birthday", "01/01/2000");
-		temp.put("email", "murugan@gmail.com");
-		temp.put("id", "idval");
-		temp.put("name", "kumar");
-		temp.put("phone", "(000) 000-0000");
+		temp.put("date", "01/01/2000");
+		temp.put("price", "25000");
+		temp.put("id", "idval1");
+		temp.put("name", "Product A");
+		temp.put("productId", "(000) 000-0000");
 		data.add(temp);
 		
 		Map<String,String> temp2 = new HashMap<String,String>();
-		temp2.put("birthday", "01/01/2001");
-		temp2.put("email", "murugan2@gmail.com");
+		temp2.put("date", "01/01/2001");
+		temp2.put("price", "murugan2@gmail.com");
 		temp2.put("id", "idval3");
 		temp2.put("name", "kumar4");
-		temp2.put("phone", "(000) 000-0005");
+		temp2.put("productId", "(000) 000-0005");
 		data.add(temp2);
 	}
 

@@ -2,19 +2,19 @@ Ext.onReady(function(){
 
 	Ext.BLANK_IMAGE_URL = 'scripts/ext-3.1.1/resources/images/default/s.gif';
 	
-    var Contact = Ext.data.Record.create([
+    var Product = Ext.data.Record.create([
 	{name: 'id'},
     {
         name: 'name',
         type: 'string'
     }, {
-        name: 'phone',
+        name: 'productId',
         type: 'string'
     }, {
-        name: 'email',
+        name: 'price',
         type: 'string'
     }, {
-        name: 'birthday',
+        name: 'date',
         type: 'date',
         dateFormat: 'm/d/Y'
     }]);
@@ -35,7 +35,7 @@ Ext.onReady(function(){
         root: 'data',
         messageProperty: 'message'  // <-- New "messageProperty" meta-data
     }, 
-    Contact);
+    Product);
 
  // The new DataWriter component.
     var writer = new Ext.data.JsonWriter({
@@ -74,7 +74,7 @@ Ext.onReady(function(){
     var grid = new Ext.grid.GridPanel({
         store: store,
         columns: [
-            {header: "NAME",
+            {header: "PRODUCT NAME",
              width: 170,
              sortable: true,
              dataIndex: 'name',
@@ -82,26 +82,26 @@ Ext.onReady(function(){
                 xtype: 'textfield',
                 allowBlank: false
             }},
-            {header: "PHONE #",
+            {header: "PRODUCT ID",
              width: 150,
              sortable: true,
-             dataIndex: 'phone',
+             dataIndex: 'productId',
              editor: {
                  xtype: 'textfield',
                  allowBlank: false
             }},
-            {header: "EMAIL",
+            {header: "PRICE",
              width: 150,
              sortable: true,
-             dataIndex: 'email',
+             dataIndex: 'price',
              editor: {
                 xtype: 'textfield',
                 allowBlank: false
             }},
-            {header: "BIRTHDAY",
+            {header: "DATE",
              width: 100,
              sortable: true,
-             dataIndex: 'birthday',
+             dataIndex: 'date',
              renderer: Ext.util.Format.dateRenderer('m/d/Y'),
              editor: new Ext.form.DateField ({
                 allowBlank: false,
@@ -110,19 +110,19 @@ Ext.onReady(function(){
             })}
         ],
         plugins: [editor,Ext.ux.grid.DataDrop],
-        title: 'My Contacts',
+        title: 'SALES ORDER',
         height: 300,
         width:610,
 		frame:true,
 		tbar: [{
             iconCls: 'icon-user-add',
-            text: 'Add Contact',
+            text: 'Add Sales Order',
             handler: function(){
-                var e = new Contact({
-                    name: 'New Guy',
-                    phone: '(000) 000-0000',
-                    email: 'new@loianetest.com',
-                    birthday: '01/01/2000'
+                var e = new Product({
+                    name: 'Product A',
+                    productId: '123456',
+                    price: '123',
+                    date: '01/01/2014'
                 });
                 editor.stopEditing();
                 store.insert(0, e);
@@ -132,7 +132,7 @@ Ext.onReady(function(){
             }
         },{
             iconCls: 'icon-user-delete',
-            text: 'Remove Contact',
+            text: 'Remove Sales Order',
             handler: function(){
                 editor.stopEditing();
                 var s = grid.getSelectionModel().getSelections();
