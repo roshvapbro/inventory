@@ -29,8 +29,7 @@ public class SaveSalesOrderJSONDataAction {
 	private boolean success = true;
 	private int total = 1;
 
-	private HttpServletRequest request;
-	private HttpServletResponse response;
+	
 
 	public SaveSalesOrderJSONDataAction() {
 
