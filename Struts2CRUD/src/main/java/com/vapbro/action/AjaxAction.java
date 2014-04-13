@@ -30,15 +30,15 @@ public class AjaxAction
 
 
     AjaxAction(){
-    	products.add(new Product(1, "desc1", "type1",1,new Category(1,"categ1"), "other1"));
-    	products.add(new Product(2, "desc2", "type2",2,new Category(2,"categ2"), "other2"));
-    	products.add(new Product(3, "desc3", "type3",3,new Category(3,"categ3"), "other3"));
-    	products.add(new Product(4, "des4", "type4",4,new Category(4,"categ4"), "other4"));
-    	products.add(new Product(5, "des5", "type5",5,new Category(5,"categ5"), "other5"));
+    	products.add(new Product(1, "name1","desc1", "type1",1,new Category(1,"categ1"), "other1"));
+    	products.add(new Product(2, "name2","desc2", "type2",2,new Category(2,"categ2"), "other2"));
+    	products.add(new Product(3,"name3", "desc3", "type3",3,new Category(3,"categ3"), "other3"));
+    	products.add(new Product(4,"name4", "des4", "type4",4,new Category(4,"categ4"), "other4"));
+    	products.add(new Product(5,"name5", "des5", "type5",5,new Category(5,"categ5"), "other5"));
     	
     }
     /**
-     * Create collection of Employee objects.
+     * Create collection of product objects.
      * @return success
      */
     public String execute() throws Exception 

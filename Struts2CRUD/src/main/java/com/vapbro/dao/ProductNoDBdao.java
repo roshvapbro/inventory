@@ -13,9 +13,9 @@ public class ProductNoDBdao implements ProductDao {
 	private static ArrayList<Product> products;
 	static {
 		products = new ArrayList<Product>();
-		products.add(new Product(new Integer(1), "colgate", "Doe", new Integer(
+		products.add(new Product(new Integer(1), "test","colgate", "Doe", new Integer(
 				36), new Category(new Integer(100), "Accounting"), "50000"));
-		products.add(new Product(new Integer(2), "pepsodent", "Smith",
+		products.add(new Product(new Integer(2),"test", "pepsodent", "Smith",
 				new Integer(25), new Category(new Integer(300), "Sales"),
 				"35000"));
 		CategoryDao catDao = new CategoryNoDBdao();

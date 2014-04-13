@@ -1,24 +1,14 @@
 <!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
 <validators>
-  <field name="employee.firstName">
+  <field name="product.description">
      <field-validator type="requiredstring">
-          <message key="errors.required.firstname"/>
+          <message key="errors.required.description"/>
       </field-validator>
   </field>
-  <field name="employee.lastName">
+  <field name="product.type">
      <field-validator type="requiredstring">
-          <message key="errors.required.lastname"/>
+          <message key="errors.required.type"/>
       </field-validator>
-  </field>
-  <field name="employee.age">
-     <field-validator type="required" short-circuit="true">
-          <message key="errors.required.age"/>
-      </field-validator>
-      <field-validator type="int">
-      		<param name="min">18</param>
-      		<param name="max">65</param>
-          	<message key="errors.required.age.limit"/>
-      </field-validator>
-  </field>
+  </field>  
 </validators>

@@ -37,7 +37,12 @@ public class SalesOrderDBdao implements SalesOrderDao {
 
 	@Override
 	public void delete(Integer id) {
-		// TODO Auto-generated method stub
+
+		try {
+			deletefromDB(id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 
@@ -106,6 +111,74 @@ public class SalesOrderDBdao implements SalesOrderDao {
 					e.printStackTrace();
 				}
 			}
+		}
+
+	}
+
+	public void deletefromDB(int id) throws SQLException {
+		Connection dbConnection = null;
+		PreparedStatement preparedStatement = null;
+
+		String deleteSQL = "DELETE FROM sales_order WHERE Sales_Order_ID = ?";
+
+		try {
+			dbConnection = DBUtil.getDBConnection();
+			preparedStatement = dbConnection.prepareStatement(deleteSQL);
+			preparedStatement.setInt(1, id);
+			preparedStatement.executeUpdate();
+			System.out.println("SalesOrder Record with id " + id
+					+ " is deleted!");
+
+			deleteFromSalesOrderProductList(id);
+
+		} catch (SQLException e) {
+
+			System.out.println(e.getMessage());
+
+		} finally {
+
+			if (preparedStatement != null) {
+				preparedStatement.close();
+			}
+
+			if (dbConnection != null) {
+				dbConnection.close();
+			}
+
+		}
+
+	}
+
+	public void deleteFromSalesOrderProductList(int salesOrderId) throws SQLException {
+		Connection dbConnection = null;
+		PreparedStatement preparedStatement = null;
+
+		String deleteSQL = "DELETE FROM sales_order_product_list WHERE Sales_Order_ID = ?";
+
+		try {
+			dbConnection = DBUtil.getDBConnection();
+			preparedStatement = dbConnection.prepareStatement(deleteSQL);
+			preparedStatement.setInt(1, salesOrderId);
+			preparedStatement.executeUpdate();
+			System.out.println("sales_order_product_list Record with id " + salesOrderId
+					+ " is deleted!");
+
+			//deleteFromSalesOrderProductList(salesOrderId);
+
+		} catch (SQLException e) {
+
+			System.out.println(e.getMessage());
+
+		} finally {
+
+			if (preparedStatement != null) {
+				preparedStatement.close();
+			}
+
+			if (dbConnection != null) {
+				dbConnection.close();
+			}
+
 		}
 
 	}

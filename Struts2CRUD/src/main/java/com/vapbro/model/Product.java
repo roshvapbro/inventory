@@ -13,14 +13,15 @@ public class Product implements Serializable {
 	private String type;
 	private Category category;
 	private String otherInfo;
-	
+	private String name;
 
 	public Product() {
 	}
 
-	public Product(Integer pdocutId, String description, String type,
+	public Product(Integer pdocutId,String name, String description, String type,
 			Integer barcodeId, Category category, String otherInfo) {
 		this.pdocutId = pdocutId;
+		this.name=name;
 		this.description = description;
 		this.type = type;
 		this.barcodeId = barcodeId;
@@ -74,6 +75,14 @@ public class Product implements Serializable {
 
 	public void setOtherInfo(String otherInfo) {
 		this.otherInfo = otherInfo;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

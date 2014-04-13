@@ -19,11 +19,11 @@ public class ProductDBdao implements ProductDao {
 	private static ArrayList<Product> products;
 	static {
 		products = new ArrayList<Product>();
-		products.add(new Product(new Integer(1), "colgate", "Doe", new Integer(
-				36), new Category(new Integer(100), "Accounting"), "50000"));
-		products.add(new Product(new Integer(2), "pepsodent", "Smith",
-				new Integer(25), new Category(new Integer(300), "Sales"),
-				"35000"));
+//		products.add(new Product(new Integer(1), "colgate", "Doe", new Integer(
+//				36), new Category(new Integer(100), "Accounting"), "50000"));
+//		products.add(new Product(new Integer(2), "pepsodent", "Smith",
+//				new Integer(25), new Category(new Integer(300), "Sales"),
+//				"35000"));
 		CategoryDao catDao = new CategoryNoDBdao();
 		categoriesMap = catDao.getCategoriesMap();
 	}
@@ -41,18 +41,18 @@ public class ProductDBdao implements ProductDao {
 	}
 
 	public void insert(Product prod) {
-		int lastId = 0;
-		Iterator<Product> iter = products.iterator();
-		while (iter.hasNext()) {
-			Product temp = (Product) iter.next();
-			if (temp.getPdocutId().intValue() > lastId) {
-				lastId = temp.getPdocutId().intValue();
-			}
-		}
-		prod.setCategory((Category) categoriesMap.get(prod.getCategory()
-				.getCategoryId()));
-		prod.setPdocutId(new Integer(lastId + 1));
-		products.add(prod);
+//		int lastId = 0;
+//		Iterator<Product> iter = products.iterator();
+//		while (iter.hasNext()) {
+//			Product temp = (Product) iter.next();
+//			if (temp.getPdocutId().intValue() > lastId) {
+//				lastId = temp.getPdocutId().intValue();
+//			}
+//		}
+//		prod.setCategory((Category) categoriesMap.get(prod.getCategory()
+//				.getCategoryId()));
+//		prod.setPdocutId(new Integer(lastId + 1));
+//		products.add(prod);
 		writeIntoDatabase(prod);
 	}
 
@@ -68,7 +68,13 @@ public class ProductDBdao implements ProductDao {
 
 	@Override
 	public List<Product> getAllProducts() {
-		return products;
+		try {
+			return readPorductsFromDB();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@Override
@@ -117,6 +123,62 @@ public class ProductDBdao implements ProductDao {
 		}
 	}
 
+	public List<Product> readPorductsFromDB() throws Exception{
+		Connection dbConnection = null;
+		PreparedStatement preparedStatement = null;
+
+		String selectSQL = "SELECT * FROM Product";
+
+		try {
+			dbConnection = DBUtil.getDBConnection();
+			preparedStatement = dbConnection.prepareStatement(selectSQL);
+			//preparedStatement.setInt(1, 1001);
+
+			// execute select SQL stetement
+			ResultSet rs = preparedStatement.executeQuery();
+
+			products = new ArrayList<Product>();
+			while (rs.next()) {
+
+				int prodId = rs.getInt("Product_ID");
+				int barcodeId = rs.getInt("Barcode_ID");
+				String prodName = rs.getString("Product_Name");
+				String prodType = rs.getString("Product_Type");
+				String prodDesc = rs.getString("Product_Description");
+				String otherInfo = rs.getString("Product_Other_Details");
+					
+				Product p = new Product();
+				p.setBarcodeId(barcodeId);
+				p.setDescription(prodDesc);
+				p.setName(prodName);
+				p.setType(prodType);
+				p.setOtherInfo(otherInfo);
+				p.setPdocutId(prodId);
+				products.add(p);
+				
+				System.out.println("prodId : " + prodId);
+				System.out.println("prodName : " + prodName);
+
+			}
+
+		} catch (SQLException e) {
+
+			System.out.println(e.getMessage());
+
+		} finally {
+
+			if (preparedStatement != null) {
+				preparedStatement.close();
+			}
+
+			if (dbConnection != null) {
+				dbConnection.close();
+			}
+
+		}
+		return products;
+	}
+
 	public void writeIntoDatabase(Product prod) {
 		Connection conn = null;
 		String name = "";
@@ -130,16 +192,20 @@ public class ProductDBdao implements ProductDao {
 			conn = DBUtil.getDBConnection();
 
 			String insertTableSQL = "INSERT INTO Product"
-					+ "(Product_ID, Barcode_ID, Product_Name, Product_Type,Product_Description,Product_Other_Details) VALUES"
-					+ "(?,?,?,?,?,?)";
+					+ "(Barcode_ID, Product_Name, Product_Type,Product_Description,Product_Other_Details) VALUES"
+					+ "(?,?,?,?,?)";
 
 			ps = conn.prepareStatement(insertTableSQL);
-			ps.setInt(1, prod.getPdocutId());
-			ps.setInt(2, prod.getBarcodeId());
-			ps.setString(3, prod.getDescription());
-			ps.setInt(4, prod.getCategory().getCategoryId());
-			ps.setString(5, prod.getDescription());
-			ps.setString(6, prod.getOtherInfo());
+			//ps.setInt(1, prod.getPdocutId());
+			ps.setInt(1, prod.getBarcodeId());
+			ps.setString(2, prod.getDescription());
+			if(prod.getCategory()==null){
+				ps.setInt(3, 0);
+			}else{
+				ps.setInt(3, prod.getCategory().getCategoryId());
+			}
+			ps.setString(4, prod.getDescription());
+			ps.setString(5, prod.getOtherInfo());
 
 			ps.executeUpdate();
 		} catch (Exception e) {
