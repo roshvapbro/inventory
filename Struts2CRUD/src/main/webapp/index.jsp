@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>CRUD ExtJS Grid</title>
+	<title>Inventory System/title>
 	
 	<!-- ExtJS css -->
 	<link rel="stylesheet" type="text/css" href="scripts/ext-3.1.1/resources/css/ext-all.css" />
