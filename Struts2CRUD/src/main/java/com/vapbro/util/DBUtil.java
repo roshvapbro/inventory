@@ -14,7 +14,7 @@ public class DBUtil {
 	private static  String DB_DRIVER = "com.mysql.jdbc.Driver";
 	private static  String DB_URL = "jdbc:mysql://localhost/INVENTORY_NEW";
 	private static  String DB_USER = "root";
-	private static  String DB_PASSWORD = "root123";
+	private static  String DB_PASSWORD = "admin";
  
 	
 	static{

@@ -7,6 +7,16 @@ html, body  {
     font-family: Verdana, Arial, sans-serif;
     font-size:12px;
 }
+
+body {
+background-color: #6532B8;
+background-repeat: repeat-y;
+background: -webkit-gradient(linear, left top, right top, from(#7B4FC2), to(#6532B8));
+background: -webkit-linear-gradient(left, #6532B8, #7B4FC2);
+background: -moz-linear-gradient(left, #6532B8, #7B4FC2);
+background: -ms-linear-gradient(left, #6532B8, #7B4FC2);
+background: -o-linear-gradient(left, #6532B8, #7B4FC2);
+}
 .titleDiv {
     background-color: #EFFBEF;
     font-weight:bold;
