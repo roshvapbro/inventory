@@ -14,6 +14,11 @@
 		<tomcat.dir>/home/bphillips/tomcats/apache-tomcat-6.0.29</tomcat.dir>
 	</properties>
 	<dependencies>
+	<dependency>
+		<groupId>commons-beanutils</groupId>
+		<artifactId>commons-beanutils</artifactId>
+		<version>1.8.0</version>
+	</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
@@ -84,6 +89,12 @@
 			<artifactId>gson</artifactId>
 			<version>1.7.1</version>
 		</dependency>
+		<dependency>
+	<groupId>org.apache.struts</groupId>
+	<artifactId>struts2-tiles-plugin</artifactId>
+	<version>2.2.3</version>
+</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>inventory</finalName>
@@ -101,6 +112,7 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>

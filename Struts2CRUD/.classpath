@@ -9,16 +9,16 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
-		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/mmuppida/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar"/>
-	<classpathentry kind="lib" path="C:/work/rosh/extjs-crud-grid-master/extjs-crud-grid-master/WebContent/WEB-INF/lib/json-lib-2.2.3.jar"/>
-	<classpathentry kind="lib" path="C:/Setups/apache-tomcat-7.0.52-windows-x64/apache-tomcat-7.0.52/lib/servlet-api.jar" sourcepath="C:/Users/mmuppida/.m2/repository/org/apache/tomcat/tomcat-servlet-api/7.0.52/tomcat-servlet-api-7.0.52-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/mmuppida/.m2/repository/org/apache/struts/struts2-core/2.3.1.2/struts2-core-2.3.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/mmuppida/.m2/repository/org/apache/struts/xwork/xwork-core/2.3.1.2/xwork-core-2.3.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/mmuppida/.m2/repository/com/google/code/gson/gson/1.7.1/gson-1.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/com/google/code/gson/gson/1.7.1/gson-1.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="E:/Coir Accounts/apache-tomcat-7.0.34/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7"/>
+	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/org/apache/struts/xwork/xwork-core/2.2.1.1/xwork-core-2.2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/org/apache/struts/struts2-core/2.2.1.1/struts2-core-2.2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/org/apache/tiles/tiles-api/2.0.6/tiles-api-2.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/org/apache/tiles/tiles-core/2.0.6/tiles-core-2.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/org/apache/tiles/tiles-jsp/2.0.6/tiles-jsp-2.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/org/apache/struts/struts2-tiles-plugin/2.2.3/struts2-tiles-plugin-2.2.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
