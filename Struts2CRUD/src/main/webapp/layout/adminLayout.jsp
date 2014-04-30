@@ -42,11 +42,12 @@ response.setDateHeader ("Expires", -1);
             </a>
 
   <jsp:include page="/common/adminMenu.jsp" />
-   <tiles:insertAttribute name="menu"/>
 
 <div id="content">
 
+		 <tiles:insertAttribute name="menu"/>
 		<tiles:insertAttribute name="body"/>
+		
 </div>
 
 

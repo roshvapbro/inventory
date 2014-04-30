@@ -8,7 +8,7 @@
                 <a href="#" title="Dashboard">Dashboard</a>
                 <a href="#" title="Sales">Sales</a>
                 <a href="#" title="Purchase">Purchase</a>
-                <a href="#" title="Products &amp; Items">Products &amp; Items</a>
+                <a href="<%=request.getContextPath() %>/index.action" title="Products &amp; Items">Products &amp; Items</a>
                 <a href="#" title="Finance">Finance</a>
                 <div style="float: right;">
                     <a href="/Account/SignOut.aspx" class="icon">

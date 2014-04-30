@@ -9,19 +9,19 @@
     <definition name="productlist" template="/layout/adminLayout.jsp">
             <put-attribute name="page" value="productlist" type="string"/>
             <put-attribute name="menuIndex" value="0" type="string"/>
-        <put-attribute name="menu" value="/components/blank.html"/>
+        <put-attribute name="menu" value="/jsp/productleftmenu.jsp"/>
     	<put-attribute name="body" value="/jsp/products.jsp"/>
     </definition>
     <definition name="addproduct" template="/layout/adminLayout.jsp">
             <put-attribute name="page" value="addProductInput" type="string"/>
             <put-attribute name="menuIndex" value="0" type="string"/>
-        <put-attribute name="menu" value="/components/blank.html"/>
+        <put-attribute name="menu" value="/jsp/productleftmenu.jsp"/>
     	<put-attribute name="body" value="/jsp/productForm.jsp"/>
     </definition>
       <definition name="saveproduct" template="/layout/adminLayout.jsp">
             <put-attribute name="page" value="addProductInput" type="string"/>
             <put-attribute name="menuIndex" value="0" type="string"/>
-        <put-attribute name="menu" value="/components/blank.html"/>
+        <put-attribute name="menu" value="/jsp/productleftmenu.jsp"/>
     	<put-attribute name="body" value="/jsp/productForm.jsp"/>
     </definition>
     

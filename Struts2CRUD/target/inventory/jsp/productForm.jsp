@@ -9,16 +9,20 @@
 
 <html>
 <head>
-    <link href="<s:url value='/css/main.css'/>" rel="stylesheet" type="text/css"/>
     <style>td { white-space:nowrap; }</style>
     <title><s:property value="#title"/></title>
     <s:head />
 </head>
-<body>
+
+             <td>
+                <div class="content">
+
 <div class="titleDiv"><s:text name="application.title"/></div>
 <h1><s:property value="#title"/></h1>
 <s:actionerror />
 <s:actionmessage />
+<div class="form">
+
 <s:form action="addProductSave" method="post">
     <s:textfield key="product.description"   size="40"/>
     <s:textfield key="product.type"   size="40"/>
@@ -28,6 +32,7 @@
     <s:hidden name="product.pdocutId" />
     <s:submit key="submit"/>
 </s:form>
+</div>
+</div>
+</tbody></table>
 
-</body>
-</html>
