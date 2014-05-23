@@ -20,5 +20,6 @@
 	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/org/apache/tiles/tiles-core/2.0.6/tiles-core-2.0.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/org/apache/tiles/tiles-jsp/2.0.6/tiles-jsp-2.0.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/org/apache/struts/struts2-tiles-plugin/2.2.3/struts2-tiles-plugin-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ROSH MOHAN/.m2/repository/org/apache/struts/struts2-dojo-plugin/2.1.2/struts2-dojo-plugin-2.1.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

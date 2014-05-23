@@ -28,7 +28,9 @@
 						<th scope="col"><s:text name="label.description"/></th>
 						<th scope="col" ><s:text name="label.type"/></th>
 						<th scope="col" ><s:text name="label.category"/></th>
-						<th scope="col" ><s:text name="label.otherinfo"/></th>
+						<th scope="col" ><s:text name="label.otherInfo"/></th>
+						<th scope="col" ><s:text name="label.edit"/></th>	
+						<th scope="col" ><s:text name="label.delete"/></th>	
 						</tr>
 						<tr class="tableFloatingHeaderOriginal">
 						<th scope="col" >Select</th>
@@ -36,7 +38,11 @@
 						<th scope="col" ><s:text name="label.description"/></th>
 						<th scope="col" ><s:text name="label.type"/></th>
 						<th scope="col" ><s:text name="label.category"/></th>
-						<th scope="col" ><s:text name="label.otherinfo"/></th>	
+						<th scope="col" ><s:text name="label.otherInfo"/></th>	
+						<th scope="col" ><s:text name="label.edit"/></th>	
+						<th scope="col" ><s:text name="label.delete"/></th>	
+						
+						
 						</tr>
           
     <s:iterator value="products" status="status">
@@ -52,12 +58,13 @@
                     <s:param name="product.pdocutId" value="pdocutId"/>
                 </s:url>
                 <a href="<s:property value="#url"/>">Edit</a>
+                </td><td class="nowrap">
                 &nbsp;&nbsp;&nbsp;
                 <s:url action="deleteProduct" var="url">
                     <s:param name="product.pdocutId" value="pdocutId"/>
                 </s:url>
                 <a href="<s:property value="#url"/>">Delete</a>
-            </td>
+                </td>
         </tr>
     </s:iterator>
     </tbody></table></div>

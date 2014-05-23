@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
                              http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-  <display-name>Struts 2 Portlet Example</display-name>
+  <display-name>Inventory</display-name>
   
   
   <welcome-file-list>
@@ -21,7 +21,7 @@
     </filter-mapping> 
      <context-param>
 		<param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
-		<param-value>/WEB-INF/tiles.xml</param-value>
+		<param-value>/WEB-INF/tiles.xml,/WEB-INF/finance-tiles.xml</param-value>
 	</context-param>
 
 	<listener>

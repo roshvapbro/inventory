@@ -72,7 +72,8 @@
 
 		<action name="editProductInput" class="com.vapbro.action.ProductAction"
 			method="input">
-			<result name="input">/jsp/productForm.jsp</result>
+		<result name="input" type="tiles">editproduct</result>
+			
 		</action>
 
 		<action name="deleteProduct" class="com.vapbro.action.ProductDeleteAction"
@@ -86,7 +87,47 @@
 		 <result name="success" type="redirectAction">
 				<param name="actionName">index</param>
 			</result>
-		</action>	
+		</action>
+		<action name="addGroupMaster" class="com.vapbro.action.Finance.GroupMasterAction">
+			<result name="success" type="tiles">addgroup</result>
+		</action>
+		
+		<action name="saveGroupMaster" class="com.vapbro.action.Finance.GroupMasterAction" method="saveGroup">
+		<result name="success" type="redirectAction">
+				<param name="actionName">addGroupMaster</param>
+			</result>
+		</action>
+		
+		<action name="addLedger" class="com.vapbro.action.Finance.LedgerMasterAction">
+			<result name="success" type="tiles">addLedgerForm</result>
+		</action>
+		<action name="TreeNode">
+  		<result>/finance/treenode.jsp</result>
+  		</action>
+  		
+  		<action name="ReceiptAction" class="com.vapbro.action.Finance.ListingAction">
+		<result name="success" type="tiles">cashreceipt</result>
+		</action>
+		<action name="CashReceiptDetailAction" class="com.vapbro.action.Finance.ListingAction" method="getCurrentBalanceDB" >
+		<result name="success" >/finance/cashdetail.jsp</result>
+			
+		</action>
+		<action name="CashReceiptledgerAction" class="com.vapbro.action.Finance.ListingAction" method="getLedgerBalanceDB" >
+		<result name="success">/finance/cashdetail.jsp</result>
+		</action>
+		<action name="savecashReceiptform" class="com.vapbro.action.Finance.CashReceiptAction" method="saveCashReceipt">
+		<result name="success" type="redirectAction">
+				<param name="actionName">ReceiptAction</param>
+			</result>
+		</action>
+		
+		<action name="saveLedgerMaster" class="com.vapbro.action.Finance.LedgerMasterAction" method="saveLedger">
+		<result name="success" type="redirectAction">
+				<param name="actionName">addLedger</param>
+			</result>
+		</action>
+		
+		
 		</package>
 
 	<package name="default2" namespace="/ajax" extends="json-default">
@@ -101,5 +142,6 @@
         </action>
 		
 	</package>
+
 
 </struts>

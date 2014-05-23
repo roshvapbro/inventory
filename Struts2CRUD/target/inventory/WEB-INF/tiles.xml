@@ -24,5 +24,11 @@
         <put-attribute name="menu" value="/jsp/productleftmenu.jsp"/>
     	<put-attribute name="body" value="/jsp/productForm.jsp"/>
     </definition>
+    <definition name="editproduct" template="/layout/adminLayout.jsp">
+            <put-attribute name="page" value="editproduct" type="string"/>
+            <put-attribute name="menuIndex" value="0" type="string"/>
+        <put-attribute name="menu" value="/jsp/productleftmenu.jsp"/>
+    	<put-attribute name="body" value="/jsp/productForm.jsp"/>
+    </definition>
     
 </tiles-definitions>

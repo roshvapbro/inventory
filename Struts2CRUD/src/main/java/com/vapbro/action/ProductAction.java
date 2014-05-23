@@ -18,7 +18,7 @@ import com.vapbro.service.ProductService;
  * and view layer for listing employees, saving a new employee, and updating an
  * employee.
  * 
- * @author bphillips
+ * @author muppi
  * 
  */
 public class ProductAction extends ActionSupport implements Preparable {
@@ -73,7 +73,11 @@ public class ProductAction extends ActionSupport implements Preparable {
 		}
 		return INPUT;
 	}
-
+	public String execute() {
+		 
+		return SUCCESS;
+ 
+	}
 	public Product getProduct() {
 		return product;
 	}
