@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+    
+    <definition name="addgroup" template="/layout/adminLayout.jsp">
+            <put-attribute name="page" value="groupmaster" type="string"/>
+            <put-attribute name="menuIndex" value="0" type="string"/>
+        <put-attribute name="menu" value="/jsp/financeleftmenu.jsp"/>
+    	<put-attribute name="body" value="/finance/groupMasterForm.jsp"/>
+    </definition>
+    <definition name="savegroup" template="/layout/adminLayout.jsp">
+            <put-attribute name="page" value="groupmaster" type="string"/>
+            <put-attribute name="menuIndex" value="0" type="string"/>
+        <put-attribute name="menu" value="/jsp/financeleftmenu.jsp"/>
+    	<put-attribute name="body" value="/finance/groupMasterForm.jsp"/>
+    </definition>
+    
+    <definition name="addLedgerForm" template="/layout/adminLayout.jsp">
+            <put-attribute name="page" value="ledgermaster" type="string"/>
+            <put-attribute name="menuIndex" value="0" type="string"/>
+        <put-attribute name="menu" value="/jsp/lefttree.jsp"/>
+    	<put-attribute name="body" value="/finance/LedgerForm.jsp"/>
+    </definition>
+    <definition name="cashreceipt" template="/layout/receiptLayout.jsp">
+            <put-attribute name="page" value="cashreceipt" type="string"/>
+            <put-attribute name="menuIndex" value="0" type="string"/>
+         <put-attribute name="menu" value="/jsp/financeleftmenu.jsp"/>
+    	<put-attribute name="body" value="/finance/cashReceipt.jsp"/>
+    </definition>
+         
+    
+</tiles-definitions>

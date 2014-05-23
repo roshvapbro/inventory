@@ -1,0 +1,41 @@
+public class CashReceiptAction extends ActionSupport {
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7547322498466157090L;
+/**
+	 * 
+	 */
+private static  ReceiptService receiptserv=new ReceiptDaoService();
+private List<TransType> transhead =new ArrayList<>() ;
+private  TransType transtype;
+
+
+public List<TransType> getTranshead() {
+	return transhead;
+}
+
+public  TransType getTranstype() {
+	return transtype;
+}
+
+public  void setTranstype(TransType transtype) {
+	this.transtype = transtype;
+}
+
+
+
+public String execute() throws Exception {
+	transhead = receiptserv.getAllTransTypes();
+
+return SUCCESS;
+}
+
+
+public void prepare() throws Exception {
+
+
+}
+
+
+}
